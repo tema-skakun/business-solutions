@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Main from './components/Main';
 import Header from './components/Header';
 import reviewsData from './data.json';
@@ -17,7 +17,14 @@ interface ReviewsData {
 const reviewsDataTyped: ReviewsData = reviewsData;
 
 const App: React.FC = () => {
-  const [language, setLanguage] = useState<'ru' | 'en'>('ru');
+  const [language, setLanguage] = useState<'ru' | 'en'>(() => {
+    const savedLanguage = localStorage.getItem('language');
+    return savedLanguage ? (savedLanguage as 'ru' | 'en') : 'ru';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   const handleLanguageChange = (newLanguage: 'ru' | 'en') => {
     setLanguage(newLanguage);
