@@ -29,3 +29,8 @@
     background-color: #007bff;
     color: white;
 }
+
+.page-ellipsis {
+    padding: 5px 10px;
+    color: #007bff;
+}
