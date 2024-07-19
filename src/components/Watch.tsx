@@ -1,33 +1,24 @@
 // src/components/Watch.tsx
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-interface WatchState {
-  time: string;
-}
+const Watch: React.FC = () => {
+  const [time, setTime] = useState(new Date());
 
-class Watch extends Component<{}, WatchState> {
-  private timerID: NodeJS.Timeout | undefined;
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
 
-  constructor(props: {}) {
-    super(props);
-    this.state = { time: new Date().toLocaleTimeString() };
-  }
+    return () => clearInterval(intervalId);
+  }, []);
 
-  componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
-  }
+  const formattedTime = new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  }).format(time);
 
-  componentWillUnmount() {
-    if (this.timerID) clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({ time: new Date().toLocaleTimeString() });
-  }
-
-  render() {
-    return <div>{this.state.time}</div>;
-  }
-}
+  return <div>{formattedTime}</div>;
+};
 
 export default Watch;

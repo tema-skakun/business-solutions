@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Watch from './Watch';
 import LanguageSelector from './LanguageSelector';
+import './Header.css';
 
 interface HeaderProps {
   currentLanguage: 'ru' | 'en';
@@ -11,7 +12,7 @@ interface HeaderProps {
 class Header extends Component<HeaderProps> {
   render() {
     return (
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <header className="header">
         <img src="https://via.placeholder.com/150" alt="Logo" />
         <LanguageSelector
           currentLanguage={this.props.currentLanguage}

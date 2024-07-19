@@ -1,4 +1,7 @@
 // src/index.tsx
+import 'normalize.css';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
