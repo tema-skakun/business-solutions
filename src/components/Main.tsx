@@ -24,7 +24,10 @@ const Main: React.FC<MainProps> = ({ reviews }) => {
   const indexOfFirstReview = indexOfLastReview - REVIEWS_PER_PAGE;
   const currentReviews = reviewKeys.slice(indexOfFirstReview, indexOfLastReview);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="main">
