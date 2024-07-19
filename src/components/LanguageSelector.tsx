@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './LanguageSelector.css';
 
 interface LanguageSelectorProps {
@@ -6,22 +6,41 @@ interface LanguageSelectorProps {
   onLanguageChange: (language: 'ru' | 'en') => void;
 }
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({currentLanguage, onLanguageChange}) => {
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedLanguage = event.target.value as 'ru' | 'en';
-    onLanguageChange(selectedLanguage);
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLanguage, onLanguageChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleToggle = () => {
+    setIsOpen(prev => !prev);
   };
 
+  const handleLanguageChange = (language: 'ru' | 'en') => {
+    onLanguageChange(language);
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="select-wrapper">
-      <select
-        value={currentLanguage}
-        onChange={handleChange}
-        className="language-selector"
-      >
-        <option value="ru">RU</option>
-        <option value="en">EN</option>
-      </select>
+    <div className="select-wrapper" ref={dropdownRef}>
+      <button onClick={handleToggle} className="language-selector">
+        {currentLanguage.toUpperCase()}
+      </button>
+      <ul className={`dropdown-menu ${isOpen ? 'show' : ''}`}>
+        <li onClick={() => handleLanguageChange('ru')}>RU</li>
+        <li onClick={() => handleLanguageChange('en')}>EN</li>
+      </ul>
     </div>
   );
 };
