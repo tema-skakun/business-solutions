@@ -1,4 +1,3 @@
-// src/components/LanguageSelector.tsx
 import React from 'react';
 import './LanguageSelector.css';
 

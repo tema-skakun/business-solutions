@@ -1,4 +1,3 @@
-// src/components/Watch.tsx
 import React, { useState, useEffect } from 'react';
 
 const Watch: React.FC = () => {

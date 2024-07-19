@@ -1,4 +1,3 @@
-// src/store/actions.ts
 export const SET_LANGUAGE = 'SET_LANGUAGE';
 export const SET_REVIEWS = 'SET_REVIEWS';
 

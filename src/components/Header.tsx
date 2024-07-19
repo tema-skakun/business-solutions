@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import React, { Component } from 'react';
 import Watch from './Watch';
 import LanguageSelector from './LanguageSelector';
@@ -13,12 +12,16 @@ class Header extends Component<HeaderProps> {
   render() {
     return (
       <header className="header">
-        <img src="https://via.placeholder.com/150" alt="Logo" />
-        <LanguageSelector
-          currentLanguage={this.props.currentLanguage}
-          onLanguageChange={this.props.onLanguageChange}
-        />
-        <Watch />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSurMS2wpZtJiP4XQOZHpsE6i0iccEHm2zWig&usqp=CAU" alt="Logo" />
+        <div className="language-selector-wrapper">
+          <LanguageSelector
+            currentLanguage={this.props.currentLanguage}
+            onLanguageChange={this.props.onLanguageChange}
+          />
+        </div>
+        <div className="watch">
+          <Watch />
+        </div>
       </header>
     );
   }

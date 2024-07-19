@@ -1,33 +1,35 @@
-/* src/components/LanguageSelector.css */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .language-selector {
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: white;
-    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.88);
+    border: none;
+    color: #1e2315;
     padding: 5px;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-.language-selector:focus {
-    outline: none;
-    border-color: #007bff;
+.language-selector:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ceafe6;
 }
 
-.select-wrapper {
-    position: relative;
-}
-
-.select-arrow {
+.language-selector:after {
+    content: '';
     position: absolute;
-    right: 100px;
     top: 50%;
-    transform: translateY(-50%);
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
     pointer-events: none;
-}
-
-.language-selector::-ms-expand {
-    display: none;
+    transform: translateY(-50%);
 }

@@ -1,7 +1,7 @@
-// src/components/Main.tsx
 import React, { useState } from 'react';
 import { formatName } from '../utils/formatName';
 import Pagination from './Pagination';
+import './Main.css';
 
 interface Review {
   name: string;
@@ -27,11 +27,11 @@ const Main: React.FC<MainProps> = ({ reviews }) => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <div className="main">
       {currentReviews.map((key) => {
         const { name, review, date } = reviews[key];
         return (
-          <div key={key}>
+          <div className="item" key={key}>
             <h3>{formatName(name)}</h3>
             <p>{review}</p>
             <small>{date}</small>

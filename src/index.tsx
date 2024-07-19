@@ -1,5 +1,5 @@
-// src/index.tsx
 import 'normalize.css';
+import './index.css';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import React from 'react';

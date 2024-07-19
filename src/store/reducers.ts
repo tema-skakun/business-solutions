@@ -1,4 +1,3 @@
-// src/store/reducers.ts
 import { SET_LANGUAGE, SET_REVIEWS } from './actions';
 
 const initialState = {
