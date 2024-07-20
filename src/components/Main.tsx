@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { formatName } from '../utils/formatName';
+import React, {useState, useEffect} from 'react';
+import {formatName} from '../utils/formatName';
 import Pagination from './Pagination';
 import './Main.css';
 
@@ -15,7 +15,7 @@ interface MainProps {
 
 const REVIEWS_PER_PAGE = 10;
 
-const Main: React.FC<MainProps> = ({ reviews }) => {
+const Main: React.FC<MainProps> = ({reviews}) => {
   const [currentPage, setCurrentPage] = useState<number>(() => {
     const savedPage = localStorage.getItem('currentPage');
     return savedPage ? Number(savedPage) : 1;
@@ -34,27 +34,27 @@ const Main: React.FC<MainProps> = ({ reviews }) => {
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({top: 0, behavior: 'smooth'});
   };
 
   return (
     <div className="main" role="main">
       {currentReviews.map((key) => {
-        const { name, review, date } = reviews[key];
+        const {name, review, date} = reviews[key];
         return (
-          <div className="item" key={key}>
+          <div className="item" role="article" key={key}>
             <h3>{formatName(name)}</h3>
             <p>{review}</p>
             <small>{date}</small>
           </div>
         );
       })}
-      <Pagination
-        reviewsPerPage={REVIEWS_PER_PAGE}
-        totalReviews={totalReviews}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
+        <Pagination
+          reviewsPerPage={REVIEWS_PER_PAGE}
+          totalReviews={totalReviews}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
     </div>
   );
 };
