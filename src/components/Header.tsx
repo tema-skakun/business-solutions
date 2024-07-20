@@ -16,13 +16,13 @@ class Header extends Component<HeaderProps> {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSurMS2wpZtJiP4XQOZHpsE6i0iccEHm2zWig&usqp=CAU"
                alt="Logo"/>
         </div>
+        <Watch/>
         <div className="language-selector-wrapper">
           <LanguageSelector
             currentLanguage={this.props.currentLanguage}
             onLanguageChange={this.props.onLanguageChange}
           />
         </div>
-        <Watch/>
       </header>
     );
   }
