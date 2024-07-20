@@ -2,8 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders header and main component', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // проверяем, что Header компонент отображается
+  const headerElement = screen.getByRole('banner');
+  expect(headerElement).toBeInTheDocument();
+
+  // проверяем, что Main компонент отображается
+  const mainElement = screen.getByRole('main');
+  expect(mainElement).toBeInTheDocument();
 });

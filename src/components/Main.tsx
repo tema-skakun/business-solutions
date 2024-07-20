@@ -38,7 +38,7 @@ const Main: React.FC<MainProps> = ({ reviews }) => {
   };
 
   return (
-    <div className="main">
+    <div className="main" role="main">
       {currentReviews.map((key) => {
         const { name, review, date } = reviews[key];
         return (
