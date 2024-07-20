@@ -8,7 +8,6 @@
     left: 0;
     width: calc(100% - 80px);
     z-index: 1000;
-    box-shadow: 0 5px 8px rgba(181, 181, 181, 0.82);
     padding: 10px 40px;
 }
 
@@ -24,13 +23,7 @@
 .logo-container img {
     height: 100%;
     width: 100%;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-radius: 50%;
-}
-
-.logo-container:hover img {
     transform: scale(2);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 .header .language-selector-wrapper {

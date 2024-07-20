@@ -3,12 +3,12 @@
     justify-content: center;
     padding: 10px;
     list-style: none;
-    transition: all 0.3s ease; /* Плавный переход */
+    transition: all 0.3s ease;
 }
 
 .page-item {
     margin: 0 5px;
-    transition: margin 0.3s ease; /* Плавный переход */
+    transition: margin 0.3s ease;
 }
 
 .page-link {
@@ -44,11 +44,11 @@
     }
 
     .page-item {
-        margin: 0 2px;
+        margin: 2px 3px;
     }
 
     .page-link, .page-ellipsis {
-        padding: 3px 6px;
+        padding: 4px 8px;
         font-size: 0.8em;
     }
 
