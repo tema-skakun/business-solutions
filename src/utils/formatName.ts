@@ -1,5 +1,7 @@
 export const formatName = (name: string): string => {
-  const parts = name.split(' ');
+  if (!name.trim()) return '';
+
+  const parts = name.trim().split(/\s+/);
   const lastName = parts[0];
   const firstNameInitial = parts[1]?.[0] || '';
 
