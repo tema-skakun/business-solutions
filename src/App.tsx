@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Main from './components/Main';
 import Header from './components/Header';
-import reviewsData from './data.json';
+// import reviewsData from './data.json';
+import reviewsData from './data_test_pagination.json';
 
 interface Review {
   name: string;
