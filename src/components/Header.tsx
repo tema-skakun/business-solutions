@@ -12,8 +12,10 @@ class Header extends Component<HeaderProps> {
   render() {
     return (
       <header className="header">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSurMS2wpZtJiP4XQOZHpsE6i0iccEHm2zWig&usqp=CAU"
-             alt="Logo"/>
+        <div className="logo-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSurMS2wpZtJiP4XQOZHpsE6i0iccEHm2zWig&usqp=CAU"
+               alt="Logo"/>
+        </div>
         <div className="language-selector-wrapper">
           <LanguageSelector
             currentLanguage={this.props.currentLanguage}
