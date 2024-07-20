@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Main from './components/Main';
 import Header from './components/Header';
-// import reviewsData from './data.json';
+import useLocalStorage from './hooks/useLocalStorage';
 import reviewsData from './data_test_pagination.json';
+// import reviewsData from './data.json';
 
 interface Review {
   name: string;
@@ -18,14 +19,7 @@ interface ReviewsData {
 const reviewsDataTyped: ReviewsData = reviewsData;
 
 const App: React.FC = () => {
-  const [language, setLanguage] = useState<'ru' | 'en'>(() => {
-    const savedLanguage = localStorage.getItem('language');
-    return savedLanguage ? (savedLanguage as 'ru' | 'en') : 'ru';
-  });
-
-  useEffect(() => {
-    localStorage.setItem('language', language);
-  }, [language]);
+  const [language, setLanguage] = useLocalStorage<'ru' | 'en'>('language', 'ru');
 
   const handleLanguageChange = (newLanguage: 'ru' | 'en') => {
     setLanguage(newLanguage);
@@ -35,8 +29,8 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Header currentLanguage={language} onLanguageChange={handleLanguageChange}/>
-      <Main reviews={reviews}/>
+      <Header currentLanguage={language} onLanguageChange={handleLanguageChange} />
+      <Main reviews={reviews} />
     </div>
   );
 };

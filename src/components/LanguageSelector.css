@@ -25,11 +25,11 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: #333; /* Увеличенный контраст */
-    color: #fff; /* Цвет текста */
+    background: #333;
+    color: #fff;
     border: none;
     border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Более заметная тень */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 0;
     margin: 0;
     list-style: none;
