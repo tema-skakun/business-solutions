@@ -1,6 +1,40 @@
-# Getting Started with Create React App
+# Reviews Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application designed to showcase a review system with pagination and language selection. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features
+
+- **Header**: A fixed header with a logo, language selector, and a clock.
+- **Pagination**: Allows users to navigate through reviews with pagination controls.
+- **Language Selector**: Switch between Russian and English languages.
+- **Review Formatting**: Displays names in a formatted style (last name with first name initial).
+- **Dynamic Styling**: Responsive design and interactive elements.
+
+## Live Demo
+
+You can view the live version of the application [here](https://tema-skakun.github.io/business-solutions/).
+
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your machine.
+
+### Installing
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone https://github.com/tema-skakun/business-solutions.git
+cd business-solutions
+```
+
+Install the necessary dependencies:
+
+```bash
+npm install
+```
 
 ## Available Scripts
 
