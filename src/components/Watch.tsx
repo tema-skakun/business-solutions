@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Watch.css';
 
 const Watch: React.FC = () => {
   const [time, setTime] = useState(new Date());
@@ -17,7 +18,7 @@ const Watch: React.FC = () => {
     second: '2-digit'
   }).format(time);
 
-  return <div>{formattedTime}</div>;
+  return <div className="watch">{formattedTime}</div>;
 };
 
 export default Watch;

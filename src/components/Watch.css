@@ -1,0 +1,16 @@
+.watch {
+    width: 100px;
+    text-align: center;
+    font-size: 1.2em;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.watch:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
