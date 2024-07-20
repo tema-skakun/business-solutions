@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import Main from './components/Main';
 import Header from './components/Header';
 // import reviewsData from './data.json';
@@ -35,8 +35,8 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Header currentLanguage={language} onLanguageChange={handleLanguageChange} />
-      <Main reviews={reviews} />
+      <Header currentLanguage={language} onLanguageChange={handleLanguageChange}/>
+      <Main reviews={reviews}/>
     </div>
   );
 };
