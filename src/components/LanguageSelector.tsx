@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './LanguageSelector.css';
 
 interface LanguageSelectorProps {
@@ -10,27 +10,29 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLanguage, on
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleToggle = () => {
+  const handleToggle = useCallback(() => {
     setIsOpen(prev => !prev);
-  };
+  }, []);
 
-  const handleLanguageChange = (language: 'ru' | 'en') => {
+  const handleLanguageChange = useCallback((language: 'ru' | 'en') => {
     onLanguageChange(language);
     setIsOpen(false);
-  };
+  }, [onLanguageChange]);
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       setIsOpen(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('pointerdown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('pointerdown', handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
+
+  // console.log("rerender LanguageSelector");
 
   return (
     <div className="select-wrapper" ref={dropdownRef}>
@@ -45,4 +47,4 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLanguage, on
   );
 };
 
-export default LanguageSelector;
+export default React.memo(LanguageSelector);

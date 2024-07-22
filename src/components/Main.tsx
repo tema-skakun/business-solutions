@@ -36,6 +36,7 @@ const Main: React.FC<MainProps> = ({reviews}) => {
     setCurrentPage(pageNumber);
     window.scrollTo({top: 0, behavior: 'smooth'});
   };
+  // console.log("rerender main");
 
   return (
     <div className="main" role="main">
