@@ -15,9 +15,8 @@ This is a React application designed to showcase a review system with pagination
 
 You need to develop a simple SPA:
 
-- The "Header" block consists of an image (from open sources), a language dropdown list (ru, en), and a "Watch" component in the "hh:mm
-  " format (the clock should display real time).
-- The "Main" block consists of a list of reviews (data from data.json: link) in the format (client name, review, date). The number of reviews per page is 10 (max). If there are more reviews, pagination should be implemented in the format (min ... mid ... max).
+- The "Header" block consists of an image (from open sources), a language dropdown list (ru, en), and a "Watch" component in the "hh:mm:ss" format (the clock should display real time).
+- The "Main" block consists of a list of reviews (data from [data.json](https://disk.yandex.ru/d/1zUh9hte3u2emQ) in the format (client name, review, date). The number of reviews per page is 10 (max). If there are more reviews, pagination should be implemented in the format (min ... mid ... max).
   The client's name format: Иванов И.
 
 **Stack**
@@ -111,5 +110,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - **Error Handling**: Improve error handling throughout the app, especially for network requests and localStorage operations.
 - **Code Splitting**: Implement code splitting to reduce the initial load time of the application.
 - **API Integration**: Integrate with a real backend API for fetching reviews, allowing for dynamic updates and user submissions.
-- **State Management**: Evaluate and potentially refactor state management to use modern solutions like React Context API or other state management libraries.
+- **State Management**: Evaluate and potentially refactor state management to use modern solutions like Redux Toolkit for simplified and efficient state management.
 - **Dockerization**: Provide a Docker setup for easier deployment and development environment consistency.
