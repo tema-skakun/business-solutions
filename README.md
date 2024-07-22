@@ -2,6 +2,14 @@
 
 This is a React application designed to showcase a review system with pagination and language selection. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Table of Contents
+
+* [Task Description](#task-description)
+* [Features](#features)
+* [Live Demo](#live-demo)
+* [Getting Started](#getting-started)
+* [Possible Improvements](#possible-improvements)
+
 ## Task Description
 **Task**
 
@@ -29,6 +37,8 @@ It will be a plus if no third-party libraries are used!
 - **Language Selector**: Switch between Russian and English languages.
 - **Review Formatting**: Displays names in a formatted style (last name with first name initial).
 - **Dynamic Styling**: Responsive design and interactive elements.
+- **Custom Hook**: Uses a custom hook for managing localStorage with enhanced error handling and validation.
+- **Testing**: Comprehensive tests for components using `@testing-library/react` to ensure proper rendering and functionality.
 
 ## Live Demo
 
@@ -92,8 +102,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Possible Improvements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Performance Optimization**: Improve the performance of the app by optimizing the rendering of components and utilizing React.memo where appropriate.
+- **Accessibility**: Enhance accessibility features, ensuring all interactive elements are accessible via keyboard and screen readers.
+- **UI/UX Enhancements**: Refine the user interface and user experience, including animations and transitions, to make the app more engaging.
+- **CSS Modules**: Implement CSS Modules to scope CSS by component and avoid global style conflicts.
+- **Error Handling**: Improve error handling throughout the app, especially for network requests and localStorage operations.
+- **Code Splitting**: Implement code splitting to reduce the initial load time of the application.
+- **API Integration**: Integrate with a real backend API for fetching reviews, allowing for dynamic updates and user submissions.
+- **State Management**: Evaluate and potentially refactor state management to use modern solutions like React Context API or other state management libraries.
+- **Dockerization**: Provide a Docker setup for easier deployment and development environment consistency.
