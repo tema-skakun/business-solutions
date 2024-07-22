@@ -2,6 +2,26 @@
 
 This is a React application designed to showcase a review system with pagination and language selection. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Task Description
+**Task**
+
+You need to develop a simple SPA:
+
+- The "Header" block consists of an image (from open sources), a language dropdown list (ru, en), and a "Watch" component in the "hh:mm
+  " format (the clock should display real time).
+- The "Main" block consists of a list of reviews (data from data.json: link) in the format (client name, review, date). The number of reviews per page is 10 (max). If there are more reviews, pagination should be implemented in the format (min ... mid ... max).
+  The client's name format: Иванов И.
+
+**Stack**
+
+- React (class component)
+- Redux
+- Typescript
+- Webpack
+
+The implementation of styles is at the candidate's discretion.
+It will be a plus if no third-party libraries are used!
+
 ## Features
 
 - **Header**: A fixed header with a logo, language selector, and a clock.
@@ -13,7 +33,6 @@ This is a React application designed to showcase a review system with pagination
 ## Live Demo
 
 You can view the live version of the application [here](https://tema-skakun.github.io/business-solutions/).
-
 
 ## Getting Started
 
